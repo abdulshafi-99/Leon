@@ -1,19 +1,38 @@
+/* start global variables */
+:root {
+    --main-duration: .5s;
+}
+/* end global variables */
 
+/* start global rules */
 * {
     box-sizing: border-box;
     --webkit-box-sizing: border-box;
     -moz-webkit-box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Work Sans', sans-serif;
 }
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+/* end global rules */
 
+/* start container */
 .container {
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #aaa;
 }
 /* small screens */
 @media (min-width: 768px) {
@@ -33,3 +52,71 @@ body {
         width: 1100px;
     }
 }
+/* end container */
+
+/* Start header section */
+header {
+    padding: 20px;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    width: 60px;
+}
+header nav {
+    position: relative;
+}
+header nav .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+header nav .icon span {
+    width: 100%;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: #333;
+}
+header nav .icon span:nth-of-type(2) {
+    width: 50%;
+    transition-duration: var(--main-duration);
+}
+header nav .icon:hover span:nth-of-type(2) {
+    width: 100%;
+}
+header nav ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    background-color: #f6f6f6;
+    min-width: 200px;
+}
+header nav:hover ul {
+    display: block;
+}
+header nav ul::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;;
+}
+header nav ul li a {
+    display: block;
+    padding: 15px;
+    transition-duration: var(--main-duration);
+}
+header nav ul li a:hover {
+    padding-left: 25px;
+}
+header nav ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+/* end header section */
