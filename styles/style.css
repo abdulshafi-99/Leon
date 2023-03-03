@@ -1,6 +1,9 @@
 /* start global variables */
 :root {
     --main-color: #10cab7;
+    --text-color: #777;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
     --main-duration: .5s;
 }
 /* end global variables */
@@ -98,6 +101,7 @@ header nav ul {
     position: absolute;
     right: 0;
     top: calc(100% + 15px);
+    z-index: 1;
     background-color: #f6f6f6;
     min-width: 200px;
 }
@@ -107,7 +111,7 @@ header nav:hover ul {
 header nav ul::before {
     content: "";
     position: absolute;
-    right: 0;
+    right: 5px;
     top: -20px;
     border-width: 10px;
     border-style: solid;
@@ -152,3 +156,31 @@ header nav ul li:not(:last-child) a {
     line-height: 1.9;
 }
 /* end landing section */
+
+/* start features section */
+.features {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+}
+.features .box {
+    text-align: center;
+}
+.features .box i {
+    color: var(--main-color);
+}
+.features .box h3 {
+    font-weight: bold;
+    margin: 30px 0;
+}
+.features .box p {
+    color: var(--text-color);
+    font-size: 17px;
+    line-height: 1.5;
+}
+/* end features section */
