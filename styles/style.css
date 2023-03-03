@@ -1,5 +1,6 @@
 /* start global variables */
 :root {
+    --main-color: #10cab7;
     --main-duration: .5s;
 }
 /* end global variables */
@@ -24,6 +25,10 @@ ul {
 a {
     text-decoration: none;
     color: #333;
+}
+h1 {
+    margin: 0;
+    padding: 0;
 }
 /* end global rules */
 
@@ -120,3 +125,30 @@ header nav ul li:not(:last-child) a {
     border-bottom: 1px solid #ddd;
 }
 /* end header section */
+
+/* start landing section */
+.landing {
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+}
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    max-width: 100%;
+    text-align: center;
+}
+.landing .text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+.landing .text p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+/* end landing section */
