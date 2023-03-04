@@ -1,6 +1,7 @@
 /* start global variables */
 :root {
     --main-color: #10cab7;
+    --secondary-color: #2c4755;
     --text-color: #777;
     --section-padding: 60px;
     --section-background: #f6f6f6;
@@ -29,11 +30,31 @@ a {
     text-decoration: none;
     color: #333;
 }
-h1 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
+
 /* end global rules */
+
+/* start heading component */
+.heading-component {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.heading-component h1 {
+    color: #ebeced;
+    font-weight: 800;
+    font-size: 100px;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.heading-component p {
+    color: var(--text-color);
+    margin-top: -30px;
+    font-size: 20px;
+}
+/* end heading compoent */
 
 /* start container */
 .container {
@@ -159,8 +180,6 @@ header nav ul li:not(:last-child) a {
 
 /* start features section */
 .features {
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
     background-color: var(--section-background);
 }
 .features .container {
@@ -169,7 +188,15 @@ header nav ul li:not(:last-child) a {
     gap: 50px;
 }
 .features .box {
+    cursor: pointer;
     text-align: center;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    transition-duration: var(--main-duration);
+}
+.features .box:hover {
+    box-shadow: 0px 4px 18px 0px rgb(36 39 46 / 10%);
+    background-color: #fff;
 }
 .features .box i {
     color: var(--main-color);
@@ -184,3 +211,49 @@ header nav ul li:not(:last-child) a {
     line-height: 1.5;
 }
 /* end features section */
+
+/* start services section */
+.services {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.services .box {
+    display: flex;
+    margin-bottom: 50px;
+}
+.services .box i {
+    color: var(--main-color);
+    margin-right: 30px;
+}
+.services .box .text p {
+    color: var(--text-color);
+    line-height: 1.8;
+}
+.services .image {
+    width: 300px;
+    position: relative;
+}
+.services .image::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -40px;
+    z-index: -1;
+    width: 80px;
+    height: calc(100% + 40px);
+    background-color: var(--secondary-color);
+}
+.services .image img {
+    max-width: 100%;
+}
+@media (max-width: 1200px) {
+    .services .image {
+        display: none;
+    }
+}
+/* end services section */
