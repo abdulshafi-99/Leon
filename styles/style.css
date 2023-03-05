@@ -34,7 +34,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
-
+p {
+    margin: 0;
+    padding: 0;
+}
 /* end global rules */
 
 /* start heading component */
@@ -42,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     margin-bottom: 50px;
 }
-.heading-component h1 {
+.heading-component h2 {
     color: #ebeced;
     font-weight: 800;
     font-size: 100px;
@@ -53,6 +56,15 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
     margin-top: -30px;
     font-size: 20px;
+}
+@media (max-width: 768px) {
+    .heading-component h2 {
+        font-size: 70px;
+    }
+    .heading-component p {
+        margin: -20px;
+        font-size: 15px;
+    }
 }
 /* end heading compoent */
 
@@ -185,7 +197,7 @@ header nav ul li:not(:last-child) a {
 .features .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 50px;
+    gap: 20px;
 }
 .features .box {
     cursor: pointer;
@@ -224,7 +236,7 @@ header nav ul li:not(:last-child) a {
 }
 .services .box {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 .services .box i {
     color: var(--main-color);
@@ -233,9 +245,12 @@ header nav ul li:not(:last-child) a {
 .services .box .text p {
     color: var(--text-color);
     line-height: 1.8;
+    font-weight: 300;
+    margin-top: 10px;
 }
 .services .image {
-    width: 300px;
+    text-align: center;
+    width: 260px;
     position: relative;
 }
 .services .image::after {
@@ -251,9 +266,50 @@ header nav ul li:not(:last-child) a {
 .services .image img {
     max-width: 100%;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
     .services .image {
         display: none;
     }
 }
+@media (max-width: 768px) {
+    .services .box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .services .box .text {
+        /* text-align: center; */
+        margin-top: 10px;
+    }
+}
 /* end services section */
+
+/* start portfolio section */
+.portfolio {
+    background-color: var(--section-background);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.portfolio .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.portfolio .box {
+    background-color: #fff;
+}
+.portfolio .box img {
+    max-width: 100%;
+}
+.portfolio .box .text {
+    padding: 20px;
+}
+.portfolio .box .text h3 {
+    font-weight: 800;
+    margin: 10px 0;
+}
+.portfolio .box .text p {
+    color: var(--text-color);
+    line-height: 1.5;
+    font-size: 18px;
+}
+/* end portfolio section */
