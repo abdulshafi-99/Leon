@@ -392,3 +392,48 @@ header nav ul li:not(:last-child) a {
     }
 }
 /* end about section */
+
+/* start contact section */
+.contact {
+    background-color: var(--section-background);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);    
+}
+.contact .text {
+    text-align: center;
+}
+.contact .text h2 {
+    color: var(--secondary-color);
+    margin: 0 0 20px 0;
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+.contact .text a {
+    display: block;
+    color: var(--main-color);
+    margin: 0 0 20px 0;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+.contact p {
+    color: var(--text-color);
+    font-size: 20px;
+}
+.contact p i {
+    color: var(--secondary-color);
+}
+/* end contact section */
+
+/* start footer */
+footer {
+    padding: 30px;
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: #fff;
+}
+footer span {
+    color: var(--main-color);
+}
+/* end footer */
